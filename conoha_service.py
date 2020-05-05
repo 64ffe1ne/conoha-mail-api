@@ -26,9 +26,9 @@ class ConohaAPI:
             res = json.loads(req.text)
             return res["email"]["email_id"]
         elif req.status_code == 409:
-            print("Duplicate! plz try again with different email.")
+            return "Duplicate! plz try again with different email"
         else:
-            print("error")
+            return "error"
 
     def getLastMailingMessage(self, email_id):
         getlist_host = host + "/" + email_id + "/messages"
@@ -44,11 +44,11 @@ class ConohaAPI:
                 msg_decode = base64.b64decode(msg).decode('utf-8')
                 return msg_decode
             else:
-                print("message is none")
+                return "message is none"
         elif req.status_code == 404:
-            print("not found.")
+            return "not found"
         else:
-            print("error")
+            return "error"
 
     def deleteMailAdress(self, email_id):
         del_host = host + "/" + email_id
@@ -56,6 +56,6 @@ class ConohaAPI:
         if req.status_code == 204:
             print("delete success!")
         elif req.status_code == 404:
-            print("not found")
+            return "not found"
         else:
-            print("error")
+            return "error"
