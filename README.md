@@ -1,6 +1,6 @@
 # conoha-mailing-api
 
-### example 
+### Example 
 
 ```
 from conoha_service import ConohaAPI
