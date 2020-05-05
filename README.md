@@ -1,4 +1,4 @@
-# conoha-mail-api
+# conoha-mailing-api
 
 ### example 
 
